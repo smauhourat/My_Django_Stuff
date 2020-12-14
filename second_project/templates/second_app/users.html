@@ -5,9 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Users</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
-    <h1>Users</h1>
+    <div class="container">
+        <h1 class="">Please singup here!</h1>
+        <form method="POST">
+            {{ form.as_p }}
+            {% csrf_token %}
+            <input type="submit" class="btn btn-primary" value="Submit">
+        </form>
+    </div>
+    <!-- <h1>Users</h1>
     <div class="djangotwo">
         {% if users %}
             <table>
@@ -29,7 +38,7 @@
             {% else %}
                 <p>NO ACCESS FOUND!</p>
             {% endif %}
-    </div>
+    </div> -->
 
 </body>
 </html>
