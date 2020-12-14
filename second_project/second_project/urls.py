@@ -16,9 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, re_path, include
 from first_app import views
+from second_app import views
 
 urlpatterns = [
     re_path(r'^$',  views.index),
     re_path(r'^first_app/', include('first_app.urls')),
+    re_path(r'^second_app/', include('second_app.urls')),
+    re_path(r'^users', include('second_app.urls')),
     path('admin/', admin.site.urls),
 ]
