@@ -18,7 +18,7 @@ from django.urls import path, re_path, include
 from basic_app import views
 
 urlpatterns = [
-    re_path(r'^$',  views.index),
+    re_path(r'^$',  views.index, name="index"),
     path('admin/', admin.site.urls),
     re_path(r'^basic_app/',  include('basic_app.urls')),
 ]
