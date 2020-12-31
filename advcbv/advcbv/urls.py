@@ -18,9 +18,11 @@ from django.urls import path, re_path, include
 from basic_app import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    re_path(r'^admin/', admin.site.urls, name='admin'),
     # re_path(r'^$',  views.index, name="index"),
     # re_path(r'^$',  views.CBView.as_view()),
     # path('', views.CBView.as_view())
-    path('', views.IndexView.as_view())
+    # re_path(r'^$', views.IndexView.as_view()),
+    re_path(r'^$', views.IndexView.as_view()),
+    re_path(r'^basic_app/', include('basic_app.urls', namespace='basic_app')),
 ]
